@@ -31,7 +31,7 @@ mode = st.sidebar.selectbox(
     "Select Feature", ["Practice Quiz Generator", "Detailed Study Notes"]
 )
 num_questions = st.sidebar.slider(
-    "Number of Quiz Questions", min_value=3, max_value=10, value=5
+    "Number of Quiz Questions", min_value=3, max_value=30, value=5
 )
 difficulty = st.sidebar.select_slider(
     "Quiz Difficulty", options=["Easy", "Medium", "Hard"]
@@ -92,7 +92,7 @@ if st.button("🚀 Generate Material", type="primary"):
     st.warning("Please upload a file or paste some lecture notes first!")
   else:
     st.session_state.submitted = False
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
     with st.spinner("AI is reading your content and generating material..."):
       try:
