@@ -94,11 +94,7 @@ if st.button("🚀 Generate Material", type="primary"):
     st.session_state.submitted = False
     available_models = [
     m.name
-    for m in genai.list_models()
-    if "generateContent" in m.supported_generation_methods
-    ]
-    selected_model = available_models[0] if available_models else "gemini-2.5-flash"
-    model = genai.GenerativeModel(selected_model)
+    model = genai.GenerativeModel("gemini-3.5-flash")
 
     with st.spinner("AI is reading your content and generating material..."):
       try:
