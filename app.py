@@ -92,8 +92,6 @@ if st.button("🚀 Generate Material", type="primary"):
     st.warning("Please upload a file or paste some lecture notes first!")
   else:
     st.session_state.submitted = False
-    available_models = [
-    m.name
     model = genai.GenerativeModel("gemini-3.5-flash")
 
     with st.spinner("AI is reading your content and generating material..."):
